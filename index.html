@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso a los atributos del DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="contenedor">
+        <div class=""></div>
+        <div class=""></div>
+    </section>
+
+    <script>
+/*      Esto agrega el cuadrado(div) pero lo agrega al final del body y no es lo que se quiere. 
+        var elemento = document.createElement("div");
+        elemento.setAttribute("class", "azul")
+        document.body.appendChild(elemento); */
+
+        var elemento = document.createElement("div");
+        var padre = document.getElementById("contenedor");
+        var referencia = document.getElementsByName("div")[0];
+        elemento.setAttribute("class", "rojo");
+        padre.insertBefore(elemento, referencia);
+
+        var elemento = document.createElement("div");
+        var padre = document.getElementById("contenedor");
+        var referencia = document.getElementsByName("div")[0];
+        elemento.setAttribute("class", "azul");
+        padre.insertBefore(elemento, referencia);
+    </script>
+</body>
+</html>
